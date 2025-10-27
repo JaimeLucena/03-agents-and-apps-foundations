@@ -1,0 +1,49 @@
+[project]
+name = "03-agents-and-apps-foundations"
+version = "0.1.0"
+description = "Learn how to build and orchestrate AI agents with LangGraph, CrewAI, FastAPI, Streamlit, and LangSmith monitoring."
+requires-python = ">=3.10"
+
+dependencies = [
+  # --- Core & notebooks ---
+  "jupyter>=1.0.0",
+  "ipykernel>=6.29.0",
+  "python-dotenv>=1.0",
+
+  # --- LangChain modern stack (LCEL-based) ---
+  "langchain>=0.3.0",
+  "langchain-core>=0.3.0",
+  "langchain-community>=0.3.0",
+  "langchain-text-splitters>=0.3.0",
+
+  # --- Providers ---
+  "langchain-openai>=0.2.0",
+  "langchain-groq>=0.1.0",
+  "openai>=1.109.1",
+
+  # --- Agent orchestrators ---
+  "langgraph>=0.2.39",             # for building agent graphs & memory
+  "langgraph-checkpoint-sqlite>=2.0.0",  # persistent memory backend
+  "crewai>=0.66.0",                # CrewAI multi-agent orchestration (latest stable)
+
+  # --- API & UI ---
+  "fastapi>=0.115.0",
+  "uvicorn[standard]>=0.30.0",
+  "streamlit>=1.38.0",
+
+  # --- Monitoring & observability ---
+  "langsmith>=0.1.0",
+
+  # --- Utilities ---
+  "pydantic>=2.8.0",
+  "pydantic-settings>=2.11.0",
+  "requests>=2.32.3",
+  "tiktoken>=0.7.0"
+]
+
+[tool.uv]
+# ensures compatibility with UV
+managed = true
+
+[tool.uvicorn]
+factory = false
